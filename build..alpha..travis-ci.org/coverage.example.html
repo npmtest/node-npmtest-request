@@ -1,4 +1,6 @@
-<html lang="en"><head>
+<!doctype html>
+<html lang="en">
+<head>
     <title>Code coverage report for node-npmtest-request/request/lib/multipart.js</title>
     <meta charset="utf-8">
     <style>
@@ -208,11 +210,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../index.html">All files</a> » <a href="index.html">node-npmtest-request/request/lib/</a> » multipart.js</div>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-request/request/lib/</a> &#187; multipart.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tbody><tr><td class="line-count">1
+<tr><td class="line-count">1
 2
 3
 4
@@ -448,118 +450,117 @@ var uuid = require('uuid')
   , Buffer = require('safe-buffer').Buffer
 &nbsp;
 &nbsp;
-<span class="fstat-no" title="function not covered">function Multipart (request) {</span>
-<span class="cstat-no" title="statement not covered">  this.request = request</span>
-<span class="cstat-no" title="statement not covered">  this.boundary = uuid()</span>
-<span class="cstat-no" title="statement not covered">  this.chunked = false</span>
-<span class="cstat-no" title="statement not covered">  this.body = null</span>
+<span class="fstat-no" title="function not covered" >function Multipart (request) {</span>
+<span class="cstat-no" title="statement not covered" >  this.request = request</span>
+<span class="cstat-no" title="statement not covered" >  this.boundary = uuid()</span>
+<span class="cstat-no" title="statement not covered" >  this.chunked = false</span>
+<span class="cstat-no" title="statement not covered" >  this.body = null</span>
 }
 &nbsp;
-Multipart.prototype.isChunked = <span class="fstat-no" title="function not covered">function (options) {</span>
-<span class="cstat-no" title="statement not covered">  var self = this</span>
+Multipart.prototype.isChunked = <span class="fstat-no" title="function not covered" >function (options) {</span>
+<span class="cstat-no" title="statement not covered" >  var self = this</span>
     , chunked = false
     , parts = options.data || options
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (!parts.forEach) {</span>
-<span class="cstat-no" title="statement not covered">    self.request.emit('error', new Error('Argument error, options.multipart.'))</span>
+<span class="cstat-no" title="statement not covered" >  if (!parts.forEach) {</span>
+<span class="cstat-no" title="statement not covered" >    self.request.emit('error', new Error('Argument error, options.multipart.'))</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (options.chunked !== undefined) {</span>
-<span class="cstat-no" title="statement not covered">    chunked = options.chunked</span>
+<span class="cstat-no" title="statement not covered" >  if (options.chunked !== undefined) {</span>
+<span class="cstat-no" title="statement not covered" >    chunked = options.chunked</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (self.request.getHeader('transfer-encoding') === 'chunked') {</span>
-<span class="cstat-no" title="statement not covered">    chunked = true</span>
+<span class="cstat-no" title="statement not covered" >  if (self.request.getHeader('transfer-encoding') === 'chunked') {</span>
+<span class="cstat-no" title="statement not covered" >    chunked = true</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (!chunked) {</span>
-<span class="cstat-no" title="statement not covered">    parts.forEach(<span class="fstat-no" title="function not covered">function (part) {</span></span>
-<span class="cstat-no" title="statement not covered">      if (typeof part.body === 'undefined') {</span>
-<span class="cstat-no" title="statement not covered">        self.request.emit('error', new Error('Body attribute missing in multipart.'))</span>
+<span class="cstat-no" title="statement not covered" >  if (!chunked) {</span>
+<span class="cstat-no" title="statement not covered" >    parts.forEach(<span class="fstat-no" title="function not covered" >function (part) {</span></span>
+<span class="cstat-no" title="statement not covered" >      if (typeof part.body === 'undefined') {</span>
+<span class="cstat-no" title="statement not covered" >        self.request.emit('error', new Error('Body attribute missing in multipart.'))</span>
       }
-<span class="cstat-no" title="statement not covered">      if (isstream(part.body)) {</span>
-<span class="cstat-no" title="statement not covered">        chunked = true</span>
+<span class="cstat-no" title="statement not covered" >      if (isstream(part.body)) {</span>
+<span class="cstat-no" title="statement not covered" >        chunked = true</span>
       }
     })
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return chunked</span>
+<span class="cstat-no" title="statement not covered" >  return chunked</span>
 }
 &nbsp;
-Multipart.prototype.setHeaders = <span class="fstat-no" title="function not covered">function (chunked) {</span>
-<span class="cstat-no" title="statement not covered">  var self = this</span>
+Multipart.prototype.setHeaders = <span class="fstat-no" title="function not covered" >function (chunked) {</span>
+<span class="cstat-no" title="statement not covered" >  var self = this</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (chunked &amp;&amp; !self.request.hasHeader('transfer-encoding')) {</span>
-<span class="cstat-no" title="statement not covered">    self.request.setHeader('transfer-encoding', 'chunked')</span>
+<span class="cstat-no" title="statement not covered" >  if (chunked &amp;&amp; !self.request.hasHeader('transfer-encoding')) {</span>
+<span class="cstat-no" title="statement not covered" >    self.request.setHeader('transfer-encoding', 'chunked')</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  var header = self.request.getHeader('content-type')</span>
+<span class="cstat-no" title="statement not covered" >  var header = self.request.getHeader('content-type')</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (!header || header.indexOf('multipart') === -1) {</span>
-<span class="cstat-no" title="statement not covered">    self.request.setHeader('content-type', 'multipart/related; boundary=' + self.boundary)</span>
+<span class="cstat-no" title="statement not covered" >  if (!header || header.indexOf('multipart') === -1) {</span>
+<span class="cstat-no" title="statement not covered" >    self.request.setHeader('content-type', 'multipart/related; boundary=' + self.boundary)</span>
   } else {
-<span class="cstat-no" title="statement not covered">    if (header.indexOf('boundary') !== -1) {</span>
-<span class="cstat-no" title="statement not covered">      self.boundary = header.replace(/.*boundary=([^\s;]+).*/, '$1')</span>
+<span class="cstat-no" title="statement not covered" >    if (header.indexOf('boundary') !== -1) {</span>
+<span class="cstat-no" title="statement not covered" >      self.boundary = header.replace(/.*boundary=([^\s;]+).*/, '$1')</span>
     } else {
-<span class="cstat-no" title="statement not covered">      self.request.setHeader('content-type', header + '; boundary=' + self.boundary)</span>
+<span class="cstat-no" title="statement not covered" >      self.request.setHeader('content-type', header + '; boundary=' + self.boundary)</span>
     }
   }
 }
 &nbsp;
-Multipart.prototype.build = <span class="fstat-no" title="function not covered">function (parts, chunked) {</span>
-<span class="cstat-no" title="statement not covered">  var self = this</span>
-<span class="cstat-no" title="statement not covered">  var body = chunked ? new CombinedStream() : []</span>
+Multipart.prototype.build = <span class="fstat-no" title="function not covered" >function (parts, chunked) {</span>
+<span class="cstat-no" title="statement not covered" >  var self = this</span>
+<span class="cstat-no" title="statement not covered" >  var body = chunked ? new CombinedStream() : []</span>
 &nbsp;
-<span class="fstat-no" title="function not covered">  function add (part) {</span>
-<span class="cstat-no" title="statement not covered">    if (typeof part === 'number') {</span>
-<span class="cstat-no" title="statement not covered">      part = part.toString()</span>
+<span class="fstat-no" title="function not covered" >  function add (part) {</span>
+<span class="cstat-no" title="statement not covered" >    if (typeof part === 'number') {</span>
+<span class="cstat-no" title="statement not covered" >      part = part.toString()</span>
     }
-<span class="cstat-no" title="statement not covered">    return chunked ? body.append(part) : body.push(Buffer.from(part))</span>
+<span class="cstat-no" title="statement not covered" >    return chunked ? body.append(part) : body.push(Buffer.from(part))</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (self.request.preambleCRLF) {</span>
-<span class="cstat-no" title="statement not covered">    add('\r\n')</span>
+<span class="cstat-no" title="statement not covered" >  if (self.request.preambleCRLF) {</span>
+<span class="cstat-no" title="statement not covered" >    add('\r\n')</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  parts.forEach(<span class="fstat-no" title="function not covered">function (part) {</span></span>
-<span class="cstat-no" title="statement not covered">    var preamble = '--' + self.boundary + '\r\n'</span>
-<span class="cstat-no" title="statement not covered">    Object.keys(part).forEach(<span class="fstat-no" title="function not covered">function (key) {</span></span>
-<span class="cstat-no" title="statement not covered">      if (key === 'body') { <span class="cstat-no" title="statement not covered">return }</span></span>
-<span class="cstat-no" title="statement not covered">      preamble += key + ': ' + part[key] + '\r\n'</span>
+<span class="cstat-no" title="statement not covered" >  parts.forEach(<span class="fstat-no" title="function not covered" >function (part) {</span></span>
+<span class="cstat-no" title="statement not covered" >    var preamble = '--' + self.boundary + '\r\n'</span>
+<span class="cstat-no" title="statement not covered" >    Object.keys(part).forEach(<span class="fstat-no" title="function not covered" >function (key) {</span></span>
+<span class="cstat-no" title="statement not covered" >      if (key === 'body') { <span class="cstat-no" title="statement not covered" >return }</span></span>
+<span class="cstat-no" title="statement not covered" >      preamble += key + ': ' + part[key] + '\r\n'</span>
     })
-<span class="cstat-no" title="statement not covered">    preamble += '\r\n'</span>
-<span class="cstat-no" title="statement not covered">    add(preamble)</span>
-<span class="cstat-no" title="statement not covered">    add(part.body)</span>
-<span class="cstat-no" title="statement not covered">    add('\r\n')</span>
+<span class="cstat-no" title="statement not covered" >    preamble += '\r\n'</span>
+<span class="cstat-no" title="statement not covered" >    add(preamble)</span>
+<span class="cstat-no" title="statement not covered" >    add(part.body)</span>
+<span class="cstat-no" title="statement not covered" >    add('\r\n')</span>
   })
-<span class="cstat-no" title="statement not covered">  add('--' + self.boundary + '--')</span>
+<span class="cstat-no" title="statement not covered" >  add('--' + self.boundary + '--')</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (self.request.postambleCRLF) {</span>
-<span class="cstat-no" title="statement not covered">    add('\r\n')</span>
+<span class="cstat-no" title="statement not covered" >  if (self.request.postambleCRLF) {</span>
+<span class="cstat-no" title="statement not covered" >    add('\r\n')</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return body</span>
+<span class="cstat-no" title="statement not covered" >  return body</span>
 }
 &nbsp;
-Multipart.prototype.onRequest = <span class="fstat-no" title="function not covered">function (options) {</span>
-<span class="cstat-no" title="statement not covered">  var self = this</span>
+Multipart.prototype.onRequest = <span class="fstat-no" title="function not covered" >function (options) {</span>
+<span class="cstat-no" title="statement not covered" >  var self = this</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  var chunked = self.isChunked(options)</span>
+<span class="cstat-no" title="statement not covered" >  var chunked = self.isChunked(options)</span>
     , parts = options.data || options
 &nbsp;
-<span class="cstat-no" title="statement not covered">  self.setHeaders(chunked)</span>
-<span class="cstat-no" title="statement not covered">  self.chunked = chunked</span>
-<span class="cstat-no" title="statement not covered">  self.body = self.build(parts, chunked)</span>
+<span class="cstat-no" title="statement not covered" >  self.setHeaders(chunked)</span>
+<span class="cstat-no" title="statement not covered" >  self.chunked = chunked</span>
+<span class="cstat-no" title="statement not covered" >  self.body = self.build(parts, chunked)</span>
 }
 &nbsp;
 exports.Multipart = Multipart
 &nbsp;
 &nbsp;</pre></td></tr>
-</tbody></table></pre>
+</table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 03:38:49 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Sat Apr 15 2017 21:01:17 GMT+0000 (UTC)</div>
 </div>
-
-
-</body></html>
+</body>
+</html>
