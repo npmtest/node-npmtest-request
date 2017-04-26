@@ -1,6 +1,6 @@
 # npmtest-request
 
-#### test coverage for  [request (v2.81.0)](https://github.com/request/request#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-request.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-request) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-request.svg)](https://travis-ci.org/npmtest/node-npmtest-request)
+#### basic test coverage for  [request (v2.81.0)](https://github.com/request/request#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-request.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-request) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-request.svg)](https://travis-ci.org/npmtest/node-npmtest-request)
 
 #### Simplified HTTP request client.
 
@@ -10,7 +10,7 @@
 |--:|:--|
 | coverage : | [![istanbul-coverage](https://npmtest.github.io/node-npmtest-request/build/coverage.badge.svg)](https://npmtest.github.io/node-npmtest-request/build/coverage.html/index.html)|
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-request/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-request/build/test-report.html)|
-| build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-request/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-request/tree/gh-pages/build)|
+| test-server-github : | [![github.com test-server](https://npmtest.github.io/node-npmtest-request/GitHub-Mark-32px.png)](https://npmtest.github.io/node-npmtest-request/build/app/index.html) | | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-request/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-request/tree/gh-pages/build)|
 
 - [https://npmtest.github.io/node-npmtest-request/build/coverage.html/index.html](https://npmtest.github.io/node-npmtest-request/build/coverage.html/index.html)
 
@@ -145,7 +145,8 @@
         "test-ci": "taper tests/test-*.js",
         "test-cov": "istanbul cover tape tests/test-*.js"
     },
-    "version": "2.81.0"
+    "version": "2.81.0",
+    "bin": {}
 }
 ```
 
