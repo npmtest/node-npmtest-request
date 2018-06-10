@@ -33229,7 +33229,7 @@ local.stateInit({
             "npm_package_homepage": "https://github.com/npmtest/node-npmtest-request",
             "npm_package_name": "npmtest-request",
             "npm_package_nameLib": "npmtest_request",
-            "npm_package_version": "2017.4.26"
+            "npm_package_version": "2018.6.10"
         }
     }
 });
